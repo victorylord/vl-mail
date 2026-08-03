@@ -629,3 +629,33 @@ footer {
     font-size: 16px;
     text-align: center;
 }
+/* ADS SECTION */
+.ads-section {
+    max-width: 1400px;
+    margin: 40px auto;
+    padding: 0 40px;
+}
+.ad-banner {
+    background: var(--secondary-bg);
+    border: 1px dashed var(--gold);
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+    color: var(--text-muted);
+    position: relative;
+}
+.ad-banner p {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--text-light);
+}
+.ad-label {
+    position: absolute;
+    top: 8px;
+    right: 16px;
+    font-size: 12px;
+    color: var(--text-muted);
+    background: var(--primary-bg);
+    padding: 2px 12px;
+    border-radius: 20px;
+}
