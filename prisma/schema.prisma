@@ -1,0 +1,27 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id                Int      @id @default(autoincrement())
+  full_name         String   @db.VarChar(100)
+  email             String   @unique @db.VarChar(100)
+  phone_number      String   @unique @db.VarChar(20)
+  password_hash     String   @db.VarChar(255)
+  is_verified       Boolean  @default(false)
+  is_premium        Boolean  @default(false)
+  subscription_type String   @default("free") @db.VarChar(20)
+  subscription_expiry DateTime?
+  daily_send_count  Int      @default(0)
+  last_send_date    DateTime @default(now())
+  is_banned         Boolean  @default(false)
+  is_phone_verified Boolean  @default(false)
+  otp_code          String?  @db.VarChar(6)
+  otp_expiry        DateTime?
+  created_at        DateTime @default(now())
+}
