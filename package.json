@@ -1,25 +1,36 @@
 {
   "name": "vl-mail",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "VL Mail – Premium Email Platform built for developers",
+  "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "dev": "nodemon server.js"
+    "dev": "nodemon server.js",
+    "postinstall": "prisma generate"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "email",
+    "telegram",
+    "verification",
+    "nodejs",
+    "express"
+  ],
+  "author": "Victory Lord",
   "license": "ISC",
-  "type": "commonjs",
   "dependencies": {
     "@prisma/client": "^5.22.0",
-    "bcryptjs": "^3.0.3",
-    "cors": "^2.8.6",
-    "dotenv": "^17.4.2",
-    "express": "^5.2.1",
+    "axios": "^1.7.7",
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.0",
+    "nodemailer": "^6.9.15",
     "prisma": "^5.22.0"
   },
   "devDependencies": {
-    "nodemon": "^3.1.14"
+    "nodemon": "^3.1.4"
+  },
+  "engines": {
+    "node": ">=18.0.0"
   }
 }
