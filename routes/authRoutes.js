@@ -1,4 +1,5 @@
 // routes/authRoutes.js
+console.log('🔐 Loading auth routes...');
 const express = require('express');
 const router = express.Router();
 const bcrypt = require('bcryptjs');
@@ -8,52 +9,25 @@ const { sendOTP, generateOTP } = require('../utils/telegram');
 
 
 router.post('/register', async (req, res) => {
+    console.log('📝 Registration request received:', req.body.email);
+    
     try {
         const { full_name, email, password } = req.body;
-
-        // Check if user exists
-        const existingUser = await prisma.user.findUnique({
-            where: { email }
-        });
-
-        if (existingUser) {
-            return res.status(400).json({
-                success: false,
-                message: 'User with this email already exists'
-            });
-        }
-
-        const salt = await bcrypt.genSalt(10);
-        const password_hash = await bcrypt.hash(password, salt);
-
-        const newUser = await prisma.user.create({
-            data: {
-                full_name,
-                email,
-                password_hash,
-                is_phone_verified: false
-            }
-        });
-
-        res.status(201).json({
-            success: true,
-            message: 'User registered successfully. Please enter your Telegram username.',
-            user: {
-                id: newUser.id,
-                full_name: newUser.full_name,
-                email: newUser.email
-            }
-        });
-
+        
+        // Log received data (excluding password)
+        console.log('  Full Name:', full_name);
+        console.log('  Email:', email);
+        
+        // ... rest of your registration code
     } catch (error) {
-        console.error('Registration error:', error);
+        console.error('❌ Registration error:', error.message);
+        console.error('Stack:', error.stack);
         res.status(500).json({
             success: false,
-            message: 'Server error during registration'
+            message: error.message || 'Server error during registration'
         });
     }
 });
-
 
 router.post('/send-telegram-otp', async (req, res) => {
     try {
