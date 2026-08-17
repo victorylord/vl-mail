@@ -1,8 +1,8 @@
-document.getElementById('otpForm').addEventListener('submit', async function(e) {
-    e.preventDefault();
+// frontend/js/otp-verify.js
 
+document.addEventListener('DOMContentLoaded', function() {
+    const form = document.getElementById('otpForm');
     const email = localStorage.getItem('tempEmail');
-    const otp_code = document.getElementById('otpCode').value;
 
     if (!email) {
         alert('Please register first.');
@@ -10,22 +10,46 @@ document.getElementById('otpForm').addEventListener('submit', async function(e) 
         return;
     }
 
-    try {
-        const res = await fetch('/api/auth/verify-telegram-otp', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ email, otp_code })
-        });
+    form.addEventListener('submit', async function(e) {
+        e.preventDefault();
 
-        const data = await res.json();
+        const otpCode = document.getElementById('otpCode').value.trim();
+        const button = this.querySelector('button[type="submit"]');
 
-        if (data.success) {
-            localStorage.setItem('userEmail', email);
-            window.location.href = 'welcome.html';
-        } else {
-            alert('❌ ' + data.message);
+        if (!otpCode || otpCode.length !== 6) {
+            alert('⚠️ Please enter a valid 6-digit code.');
+            return;
         }
-    } catch (error) {
-        alert('❌ Server error. Please try again.');
-    }
+
+        button.disabled = true;
+        button.textContent = 'Verifying...';
+
+        try {
+            const response = await fetch('/api/auth/verify-telegram-otp', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    email: email,
+                    otp_code: otpCode
+                })
+            });
+
+            const data = await response.json();
+
+            if (data.success) {
+                localStorage.setItem('userEmail', email);
+                alert('🎉 Account verified successfully!');
+                window.location.href = 'welcome.html';
+            } else {
+                alert('❌ ' + data.message);
+                button.disabled = false;
+                button.textContent = 'Verify →';
+            }
+        } catch (error) {
+            console.error('OTP verification error:', error);
+            alert('❌ Server error. Please try again.');
+            button.disabled = false;
+            button.textContent = 'Verify →';
+        }
+    });
 });

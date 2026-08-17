@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="google-adsense-account" content="ca-pub-7811708870335326">
+    <title>VL Mail – Inbox</title>
+    <link rel="stylesheet" href="css/dashboard.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7811708870335326" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="dashboard">
+        <!-- ===== SIDEBAR ===== -->
+        <aside class="sidebar">
+            <div class="logo">
+                <span class="logo-icon">VL</span>
+                <span class="logo-text">MAIL</span>
+                <span class="verified-badge">✓</span>
+            </div>
+
+            <button class="compose-btn"><i class="fas fa-pen"></i> New message</button>
+
+            <nav class="folder-list">
+                <a href="#" class="active"><i class="fas fa-inbox"></i> Inbox <span class="badge">12</span></a>
+                <a href="#"><i class="fas fa-star"></i> Starred</a>
+                <a href="#"><i class="fas fa-paper-plane"></i> Sent</a>
+                <a href="#"><i class="fas fa-file-alt"></i> Drafts</a>
+                <a href="#"><i class="fas fa-trash"></i> Trash</a>
+                <a href="#"><i class="fas fa-exclamation-triangle"></i> Spam</a>
+            </nav>
+
+            <!-- ===== SIDEBAR AD ===== -->
+            <div style="padding: 16px; background: var(--secondary-bg); border-radius: 12px; margin-top: 12px; text-align: center;">
+                <ins class="adsbygoogle"
+                     style="display:block"
+                     data-ad-client="ca-pub-7811708870335326"
+                     data-ad-slot="9374388134"
+                     data-ad-format="auto"
+                     data-full-width-responsive="true">
+                </ins>
+                <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+            </div>
+
+            <!-- ===== PROFILE ===== -->
+            <div class="user-profile" id="profileBtn">
+                <img src="https://ui-avatars.com/api/?name=Victory+Lord&background=F5A623&color=fff&size=40" alt="Profile" />
+                <div>
+                    <p>Victory Lord</p>
+                    <span>victory@vlmail.com</span>
+                    <span class="premium-badge">Premium</span>
+                </div>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+
+            <!-- Profile Dropdown -->
+            <div class="profile-dropdown" id="profileDropdown">
+                <a href="#"><i class="fas fa-user"></i> Manage account</a>
+                <a href="#"><i class="fas fa-cog"></i> Settings</a>
+                <a href="#"><i class="fas fa-life-ring"></i> Help</a>
+                <hr />
+                <a href="#"><i class="fas fa-sign-out-alt"></i> Sign out</a>
+            </div>
+        </aside>
+
+        <!-- ===== EMAIL LIST ===== -->
+        <main class="email-list">
+            <header>
+                <h2>Inbox</h2>
+                <div class="search-bar">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Search your mail..." />
+                </div>
+            </header>
+
+            <div class="email-items">
+                <!-- Email 1 -->
+                <div class="email-item" data-sender="Victory Lord" data-subject="Welcome to VL Mail!" data-preview="We're excited to have you on board..." data-time="12:30 PM">
+                    <input type="checkbox" />
+                    <i class="far fa-star star-icon"></i>
+                    <div class="email-sender">Victory Lord</div>
+                    <div class="email-subject">Welcome to VL Mail!</div>
+                    <div class="email-preview">We're excited to have you on board...</div>
+                    <div class="email-time">12:30 PM</div>
+                </div>
+
+                <!-- Email 2 -->
+                <div class="email-item" data-sender="Team VL Mail" data-subject="Your account is verified" data-preview="Congratulations! Your Blue Tick is now active..." data-time="11:15 AM">
+                    <input type="checkbox" />
+                    <i class="far fa-star star-icon"></i>
+                    <div class="email-sender">Team VL Mail</div>
+                    <div class="email-subject">Your account is verified</div>
+                    <div class="email-preview">Congratulations! Your Blue Tick is now active...</div>
+                    <div class="email-time">11:15 AM</div>
+                </div>
+
+                <!-- ===== IN-FEED AD ===== -->
+                <div style="padding: 12px 24px; border-bottom: 1px solid var(--glass-border);">
+                    <ins class="adsbygoogle"
+                         style="display:block"
+                         data-ad-client="ca-pub-7811708870335326"
+                         data-ad-slot="9374388134"
+                         data-ad-format="auto"
+                         data-full-width-responsive="true">
+                    </ins>
+                    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+                </div>
+
+                <!-- Email 3 -->
+                <div class="email-item" data-sender="Premium Support" data-subject="Premium subscription active" data-preview="You now have 80 emails/day, Blue Tick, and priority support..." data-time="Yesterday">
+                    <input type="checkbox" />
+                    <i class="far fa-star star-icon"></i>
+                    <div class="email-sender">Premium Support</div>
+                    <div class="email-subject">Premium subscription active</div>
+                    <div class="email-preview">You now have 80 emails/day, Blue Tick, and priority support...</div>
+                    <div class="email-time">Yesterday</div>
+                </div>
+
+                <!-- Email 4 -->
+                <div class="email-item" data-sender="Developer API" data-subject="API key generated" data-preview="Your API key for Telegram bot integration is ready..." data-time="Yesterday">
+                    <input type="checkbox" />
+                    <i class="far fa-star star-icon"></i>
+                    <div class="email-sender">Developer API</div>
+                    <div class="email-subject">API key generated</div>
+                    <div class="email-preview">Your API key for Telegram bot integration is ready...</div>
+                    <div class="email-time">Yesterday</div>
+                </div>
+
+                <!-- Email 5 -->
+                <div class="email-item" data-sender="Victory Lord" data-subject="VL Mail launch announcement" data-preview="Share VL Mail with your friends and earn rewards..." data-time="2 days ago">
+                    <input type="checkbox" />
+                    <i class="far fa-star star-icon"></i>
+                    <div class="email-sender">Victory Lord</div>
+                    <div class="email-subject">VL Mail launch announcement</div>
+                    <div class="email-preview">Share VL Mail with your friends and earn rewards...</div>
+                    <div class="email-time">2 days ago</div>
+                </div>
+            </div>
+        </main>
+
+        <!-- ===== READING PANE ===== -->
+        <section class="reading-pane" id="readingPane">
+            <div class="email-header">
+                <h3 id="emailSubject">Welcome to VL Mail!</h3>
+                <div class="email-meta">
+                    <span id="emailFrom"><strong>From:</strong> Victory Lord &lt;victory@vlmail.com&gt;</span>
+                    <span id="emailTo"><strong>To:</strong> you@vlmail.com</span>
+                    <span id="emailTime"><strong>Date:</strong> Today, 12:30 PM</span>
+                </div>
+                <div class="email-actions">
+                    <button><i class="fas fa-reply"></i> Reply</button>
+                    <button><i class="fas fa-forward"></i> Forward</button>
+                    <button><i class="fas fa-trash"></i> Delete</button>
+                </div>
+            </div>
+            <div class="email-body" id="emailBody">
+                <p>Hello and welcome to VL Mail!</p>
+                <p>This is your new premium email platform built for developers. Here are some things you can do:</p>
+                <ul>
+                    <li>✅ Send and receive emails</li>
+                    <li>✅ Get a Blue Tick verification</li>
+                    <li>✅ Upgrade to Premium for 80 emails/day</li>
+                    <li>✅ Use the Developer API for your Telegram bots</li>
+                </ul>
+                <p>We're excited to have you on board!</p>
+                <br />
+                <p>— <strong>Victory Lord</strong></p>
+            </div>
+
+            <!-- ===== READING PANE AD ===== -->
+            <div class="reading-ad">
+                <ins class="adsbygoogle"
+                     style="display:block"
+                     data-ad-client="ca-pub-7811708870335326"
+                     data-ad-slot="9374388134"
+                     data-ad-format="auto"
+                     data-full-width-responsive="true">
+                </ins>
+                <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+            </div>
+        </section>
+    </div>
+
+    <script src="js/dashboard.js"></script>
+</body>
+</html>
