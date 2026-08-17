@@ -5,8 +5,7 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "dev": "nodemon server.js",
-    "vercel-build": "echo 'Skipping build for Vercel' && exit 0"
+    "dev": "nodemon server.js"
   },
   "keywords": [
     "email",
@@ -30,6 +29,6 @@
     "nodemon": "^3.1.4"
   },
   "engines": {
-    "node": ">=18.0.0"
+    "node": "18.x"
   }
 }
